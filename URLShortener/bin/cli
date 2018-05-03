@@ -1,0 +1,26 @@
+#!/user/bin/env ruby
+
+puts "Input your email"
+
+email = gets.chomp
+
+user = User.new(email)
+
+puts "What do you want to do?"
+puts "0. Create shortened URL"
+puts "1. Visit shortened URL"
+
+goal = gets.chomp
+
+case goal
+when 0
+  task = 'create'
+else
+  task = visit
+end
+
+if task == 'create'
+  puts "Type in your long url"
+  long_url = gets.chomp
+
+  Shortened_url.create()
